@@ -354,6 +354,18 @@ call Highlight("NERDTreeFile", s:none, s:none, s:none)
 " Ruby
 call Highlight("rubyStringDelimiter", s:yellow, s:none, s:none)
 
+" Python
+call Highlight("pythonClassVar", s:orange, s:none, s:italic)
+call Highlight("pythonKeyword", s:orange, s:none, s:italic)
+call Highlight("pythonDecorator", s:light_grey, s:none, s:none)
+call Highlight("pythonDottedName", s:light_blue, s:none, s:none)
+call Highlight("pythonDefine", s:light_blue, s:none, s:italic)
+call Highlight("pythonFunctionCall", s:light_green, s:none, s:none)
+call Highlight("pythonModule", s:light_green, s:none, s:none)
+call Highlight("pythonClass", s:light_blue, s:none, s:none)
+call Highlight("pythonCappedVariable", s:purple, s:none, s:none)
+call Highlight("pythonParenthesis", s:light_grey, s:none, s:none)
+
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
 set background=dark
