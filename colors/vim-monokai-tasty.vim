@@ -19,12 +19,25 @@ else
   let s:italic = { "cterm": "NONE", "gui": "NONE" }
 endif
 
-let s:yellow = { "cterm": 228, "gui": "#ffff87" }
-let s:purple = { "cterm": 141, "gui": "#af87ff" }
-let s:light_green = { "cterm": 148, "gui": "#A4E400" }
-let s:light_blue = { "cterm": 81, "gui": "#62D8F1" }
-let s:magenta = { "cterm": 197, "gui": "#FC1A70" }
-let s:orange = { "cterm": 208, "gui": "#FF9700" }
+if !exists("g:vim_monokai_pro_palette")
+    let g:vim_monokai_pro_palette = 0
+endif
+
+if g:vim_monokai_pro_palette
+    let s:yellow = { "cterm": 221, "gui": "#ffd866" }
+    let s:purple = { "cterm": 147, "gui": "#ab9df2" }
+    let s:light_green = { "cterm": 150, "gui": "#a9dc76" }
+    let s:light_blue = { "cterm": 116, "gui": "#78dce8" }
+    let s:magenta = { "cterm": 204, "gui": "#ff6188" }
+    let s:orange = { "cterm": 209, "gui": "#ff875f" }
+else
+    let s:yellow = { "cterm": 228, "gui": "#ffff87" }
+    let s:purple = { "cterm": 141, "gui": "#af87ff" }
+    let s:light_green = { "cterm": 148, "gui": "#A4E400" }
+    let s:light_blue = { "cterm": 81, "gui": "#62D8F1" }
+    let s:magenta = { "cterm": 197, "gui": "#FC1A70" }
+    let s:orange = { "cterm": 208, "gui": "#FF9700" }
+endif
 
 " in order light -> dark
 let s:white = { "cterm": 231, "gui": "#ffffff" }
@@ -340,6 +353,18 @@ call Highlight("NERDTreeFile", s:none, s:none, s:none)
 
 " Ruby
 call Highlight("rubyStringDelimiter", s:yellow, s:none, s:none)
+
+" Python
+call Highlight("pythonClassVar", s:orange, s:none, s:italic)
+call Highlight("pythonKeyword", s:orange, s:none, s:italic)
+call Highlight("pythonDecorator", s:light_grey, s:none, s:none)
+call Highlight("pythonDottedName", s:light_blue, s:none, s:none)
+call Highlight("pythonDefine", s:light_blue, s:none, s:italic)
+call Highlight("pythonFunctionCall", s:light_green, s:none, s:none)
+call Highlight("pythonModule", s:light_green, s:none, s:none)
+call Highlight("pythonClass", s:light_blue, s:none, s:none)
+call Highlight("pythonCappedVariable", s:purple, s:none, s:none)
+call Highlight("pythonParenthesis", s:light_grey, s:none, s:none)
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
