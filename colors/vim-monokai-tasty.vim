@@ -19,12 +19,25 @@ else
   let s:italic = { "cterm": "NONE", "gui": "NONE" }
 endif
 
-let s:yellow = { "cterm": 228, "gui": "#ffff87" }
-let s:purple = { "cterm": 141, "gui": "#af87ff" }
-let s:light_green = { "cterm": 148, "gui": "#A4E400" }
-let s:light_blue = { "cterm": 81, "gui": "#62D8F1" }
-let s:magenta = { "cterm": 197, "gui": "#FC1A70" }
-let s:orange = { "cterm": 208, "gui": "#FF9700" }
+if !exists("g:vim_monokai_pro_palette")
+    let g:vim_monokai_pro_palette = 0
+endif
+
+if g:vim_monokai_pro_palette
+    let s:yellow = { "cterm": 221, "gui": "#ffd866" }
+    let s:purple = { "cterm": 147, "gui": "#ab9df2" }
+    let s:light_green = { "cterm": 150, "gui": "#a9dc76" }
+    let s:light_blue = { "cterm": 116, "gui": "#78dce8" }
+    let s:magenta = { "cterm": 204, "gui": "#ff6188" }
+    let s:orange = { "cterm": 209, "gui": "#ff875f" }
+else
+    let s:yellow = { "cterm": 228, "gui": "#ffff87" }
+    let s:purple = { "cterm": 141, "gui": "#af87ff" }
+    let s:light_green = { "cterm": 148, "gui": "#A4E400" }
+    let s:light_blue = { "cterm": 81, "gui": "#62D8F1" }
+    let s:magenta = { "cterm": 197, "gui": "#FC1A70" }
+    let s:orange = { "cterm": 208, "gui": "#FF9700" }
+endif
 
 " in order light -> dark
 let s:white = { "cterm": 231, "gui": "#ffffff" }
